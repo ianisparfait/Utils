@@ -1,5 +1,5 @@
 import Tour from './Tour';
-import { createButton, createIcon, createSimpleDiv } from './../CreateElements';
+import { Button, Icon, SimpleDiv } from './../CreateElements';
 
 class Intro {
   private readonly _config: Tour;
@@ -151,10 +151,10 @@ class Intro {
       veilLeft.setAttribute('style', styleObjLeft);
       veilRight.setAttribute('style', styleObjRight);
     } else {
-      veilTop = createSimpleDiv([this.classTourVeil]);
-      veilBottom = createSimpleDiv([this.classTourVeil]);
-      veilLeft = createSimpleDiv([this.classTourVeil]);
-      veilRight = createSimpleDiv([this.classTourVeil]);
+      veilTop = SimpleDiv([this.classTourVeil]);
+      veilBottom = SimpleDiv([this.classTourVeil]);
+      veilLeft = SimpleDiv([this.classTourVeil]);
+      veilRight = SimpleDiv([this.classTourVeil]);
 
       veilTop.setAttribute('style', styleObjTop);
       veilBottom.setAttribute('style', styleObjBottom);
@@ -169,21 +169,21 @@ class Intro {
   }
 
   headerStep(container: HTMLDivElement): void {
-    const header = createSimpleDiv(["tour-step-header"]);
-    const cross = createIcon(this.iconClass);
+    const header = SimpleDiv(["tour-step-header"]);
+    const cross = Icon(this.iconClass);
 
     header.append(cross);
     container.append(header);
   }
 
   bodyStep(container: HTMLDivElement): void {
-    const body = createSimpleDiv(["tour-step-body"], this.orderedList[this.currentStep].getAttribute(this._config.dataText)!);
+    const body = SimpleDiv(["tour-step-body"], this.orderedList[this.currentStep].getAttribute(this._config.dataText)!);
 
     container.append(body);
   }
 
   counterStep(container: HTMLDivElement): void {
-    const counter = createSimpleDiv(["tour-step-counter"], `${this.currentStep+1} / ${this.maxSteps}`);
+    const counter = SimpleDiv(["tour-step-counter"], `${this.currentStep+1} / ${this.maxSteps}`);
 
     container.append(counter);
   }
@@ -194,7 +194,7 @@ class Intro {
     let prev: HTMLButtonElement;
 
     if (!alreadyPrev) {
-      prev = createButton(this.btnClass, this.prevBtnName);
+      prev = Button(this.btnClass, this.prevBtnName);
       prev.classList.add("previousable");
       action.insertBefore(prev, action.children[0]);
       container.append(action);
@@ -214,7 +214,7 @@ class Intro {
     let next: HTMLButtonElement;
 
     if (!alreadyNext) {
-      next = createButton(this.btnClass, this.nextBtnName);
+      next = Button(this.btnClass, this.nextBtnName);
       next.classList.add("nextable");
       action.appendChild(next);
       container.append(action);

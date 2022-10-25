@@ -1,0 +1,54 @@
+.btn {
+  --whiteColor: #f5f5f5;
+  --mainColor: rgb(228, 58, 58);
+  height: 35px;
+  padding: 0px 35px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  appearance: none;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 10px;
+  background: var(--mainColor);
+  transition: 0.3s;
+  color: var(--whiteColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    filter: contrast(1.7) brightness(0.9);
+  }
+}
+
+.wrapper_input_file {
+  @extend .btn;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & span {
+    color: var(--whiteColor);
+  }
+  input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: transparent;
+    cursor: inherit;
+    display: block;
+  }
+}

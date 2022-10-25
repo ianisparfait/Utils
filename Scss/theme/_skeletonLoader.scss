@@ -1,0 +1,32 @@
+.skeleton_loader {
+  --veryWhiteColor: #ffffff;
+  --lessWhiteColor: #ececec;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(110deg, var(--lessWhiteColor) 8%, var(--veryWhiteColor) 18%, var(--lessWhiteColor) 33%);
+    border-radius: 5px;
+    background-size: 200% 100%;
+    animation: 2.5s shine linear infinite, 0.5s scaling cubic-bezier(0, 0, 0, 1) 1 forwards;
+    width: 0%;
+    height: 100%;
+
+    @keyframes shine {
+      to {
+        background-position-x: -200%;
+      }
+    }
+
+    @keyframes scaling {
+      0% {
+        width: 0%;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+  }
+}

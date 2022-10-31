@@ -1,4 +1,4 @@
-# Utils ![Generated Button](https://raw.githubusercontent.com/ianisparfait/Utils/image-data/badge.svg)
+# Utils
 
 Find a catalogue of functions and other utilities in the language you want!
 

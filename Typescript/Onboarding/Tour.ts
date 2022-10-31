@@ -1,4 +1,4 @@
-interface Tour {
+type Tour {
   dataSelector: string,
   dataText: string,
   iconClass: string[],
